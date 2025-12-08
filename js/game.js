@@ -477,7 +477,7 @@ class PhotonGame {
 
     // Reset current level state but keep geometry layout (same puzzle)
     resetLevel() {
-        this.loadLevel(this.levelIndex, true);
+        this.loadLevel(this.levelIndex, false);
     }
 
     // Clear ray history (removes trails but keeps current shot)
