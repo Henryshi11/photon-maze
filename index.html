@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photon Maze · Modular Build</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="game-container">
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="ui-layer">
+
+        <div class="hud-top">
+            <div class="level-info">
+                LEVEL <span id="level-txt">1</span>
+                <div id="level-desc" class="level-tag"></div>
+                Attempts: <span id="attempts-txt">0</span>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat-row"><span>CURRENT</span><span id="stat-current">0</span></div>
+                <div class="stat-row"><span>BEST</span><span id="stat-best">--</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-row"><span>OPTIMAL SUM</span><span id="stat-opt-total">0</span></div>
+                <div class="stat-row"><span>SESSION</span><span id="stat-session-total">0</span></div>
+            </div>
+        </div>
+
+        <div id="win-overlay">
+            <h1>LEVEL CLEAR</h1>
+            <p id="win-stats"></p>
+            <button onclick="game.resetLevel()">Retry</button>
+            <button onclick="game.nextLevel()">Next</button>
+        </div>
+
+        <div class="hud-bottom">
+            <button onclick="game.resetLevel()">Reset</button>
+            <button onclick="game.clearHistory()">Clear Trails</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/vec2.js"></script>
+<script src="js/maze.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
